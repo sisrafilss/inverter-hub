@@ -1,37 +1,45 @@
 import { useForm } from "react-hook-form";
-import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect } from "react";
+import GoogleLogin from "../components/GoogleLogin";
+import GitHubLogin from "../components/GitHubLogin";
+import { useLocation, useNavigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 const LoginPage = () => {
+  const { user, signIn } = useAuth();
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const from = location?.state?.from?.pathname || "/";
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const [loginError, setLoginError] = useState("");
+  // const [loginError, setLoginError] = useState("");
 
   const onSubmit = (data) => {
     console.log(data);
     // Simulate a login attempt and error handling
-    if (data.password !== "correct_password") {
-      setLoginError("Incorrect password. Please try again.");
-    } else {
-      setLoginError("");
-      console.log("Login successful");
-      // Redirect or perform post-login actions here
+    // if (data.password !== "correct_password") {
+    //   setLoginError("Incorrect password. Please try again.");
+    // } else {
+    //   setLoginError("");
+    //   console.log("Login successful");
+    //   // Redirect or perform post-login actions here
+    // }
+    signIn(data?.email, data?.password);
+  };
+
+  // Redirect user where he came from or to homepage
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+      console.log(from);
     }
-  };
-
-  const handleGoogleSignIn = () => {
-    console.log("Google Sign-In");
-    // Implement Google Sign-In logic here
-  };
-
-  const handleGithubSignIn = () => {
-    console.log("GitHub Sign-In");
-    // Implement GitHub Sign-In logic here
-  };
+  }, [from, navigate, user]);
 
   return (
     <div className="hero min-h-screen bg-base-200">
@@ -45,13 +53,13 @@ const LoginPage = () => {
         </div>
         <div className="card shrink-0 w-full max-w-md shadow-2xl bg-base-100">
           <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-            {loginError && (
+            {/* {loginError && (
               <div className="alert alert-error shadow-lg">
                 <div>
                   <span>{loginError}</span>
                 </div>
               </div>
-            )}
+            )} */}
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -89,24 +97,9 @@ const LoginPage = () => {
                 Login
               </button>
             </div>
-            <div className="form-control mt-4">
-              <button
-                type="button"
-                onClick={handleGoogleSignIn}
-                className="btn btn-outline btn-accent flex items-center"
-              >
-                <FcGoogle className="mr-2" /> Sign in with Google
-              </button>
-            </div>
-            <div className="form-control mt-2">
-              <button
-                type="button"
-                onClick={handleGithubSignIn}
-                className="btn btn-outline btn-neutral flex items-center"
-              >
-                <FaGithub className="mr-2" /> Sign in with GitHub
-              </button>
-            </div>
+
+            <GoogleLogin />
+            <GitHubLogin />
           </form>
         </div>
       </div>
