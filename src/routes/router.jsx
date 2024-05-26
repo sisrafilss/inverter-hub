@@ -11,6 +11,7 @@ import DashboardLayout from "../layouts/DashboardLayout";
 import PrivateRoute from "./private/PrivateRoute";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import AllProducts from "../pages/Dashboard/AllProducts";
+import SingleProduct from "../pages/SingleProduct";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +30,12 @@ export const router = createBrowserRouter([
       {
         path: "contact-us",
         element: <ContactUs />,
+      },
+      {
+        path: "products/:id",
+        element: <SingleProduct />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/products/${params.id}`),
       },
       {
         path: "login",

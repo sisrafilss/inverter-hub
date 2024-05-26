@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 /* eslint-disable react/prop-types */
 const ProductCardDashboard = ({ product }) => {
   return (
@@ -19,7 +21,7 @@ const ProductCardDashboard = ({ product }) => {
       </div>
 
       <div className="flex justify-around p-4">
-        <button className="btn btn-primary btn-sm rounded">Details</button>
+        <Link to={`/products/${product.id}`} className="btn btn-primary btn-sm rounded">Details</Link>
         <button className="btn btn-success text-white btn-sm rounded">Edit</button>
         <button className="btn btn-warning btn-sm rounded">Delete</button>
       </div>
