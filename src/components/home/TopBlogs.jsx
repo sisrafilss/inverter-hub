@@ -1,50 +1,63 @@
 /* eslint-disable react/prop-types */
 
+import BlogCard from "../BlogCard";
+
 const blogs = [
   {
-    title: "How to Improve Your Coding Skills",
-    date: "May 20, 2024",
+    title: "Choosing the Right Power Inverter for Your Home",
+    date: "May 5, 2024",
     excerpt:
-      "Enhance your coding abilities by practicing daily, working on projects, and engaging with the coding community...",
+      "Learn how to select the best power inverter for your home based on your specific power needs and preferences...",
     image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGNvZGluZ3xlbnwwfHx8fDE2NTk5ODc4NzA&ixlib=rb-1.2.1&q=80&w=400",
-    link: "/blog/improve-coding-skills",
+      "/images/blogs/blog-1.webp",
+    link: "/blog/choosing-right-inverter",
   },
   {
-    title: "Top 10 Web Development Frameworks",
-    date: "April 15, 2024",
+    title: "Benefits of Using Solar Power Inverters",
+    date: "April 20, 2024",
     excerpt:
-      "Discover the top web development frameworks that can help streamline your development process and improve code quality...",
+      "Explore the numerous advantages of integrating solar power inverters into your energy system for a sustainable future...",
     image:
-      "https://images.unsplash.com/photo-1517430816045-df4b7de71a74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fHdlYiUyMGRldmVsb3BtZW50fGVufDB8fHx8MTY1OTk4Nzg4MQ&ixlib=rb-1.2.1&q=80&w=400",
-    link: "/blog/top-web-frameworks",
+    "/images/blogs/blog-2.jpeg",
+    link: "/blog/benefits-solar-inverters",
   },
   {
-    title: "Understanding Asynchronous JavaScript",
+    title: "Top Features to Look for in a Power Inverter",
     date: "March 30, 2024",
     excerpt:
-      "Learn the fundamentals of asynchronous JavaScript and how it can help you write more efficient and manageable code...",
+      "Understand the key features to consider when purchasing a power inverter to ensure maximum efficiency and reliability...",
     image:
-      "https://images.unsplash.com/photo-1553484771-0c953d459061?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGFzeW5jaHJvbm91cyUyMGphdmFzY3JpcHR8ZW58MHx8fHwxNjU5OTg3OTM5&ixlib=rb-1.2.1&q=80&w=400",
-    link: "/blog/understanding-async-js",
+    "/images/blogs/blog-3.jpeg",
+    link: "/blog/features-power-inverters",
+  },
+  {
+    title: "Maintenance Tips for Your Power Inverter",
+    date: "February 15, 2024",
+    excerpt:
+      "Keep your power inverter in top condition with these essential maintenance tips and practices...",
+    image:
+    "/images/blogs/blog-4.jpeg",
+    link: "/blog/maintenance-tips",
+  },
+  {
+    title: "How to Install a Power Inverter in Your RV",
+    date: "January 10, 2024",
+    excerpt:
+      "Step-by-step guide to installing a power inverter in your RV for a seamless travel experience...",
+    image:
+    "/images/blogs/blog-5.jpg",
+    link: "/blog/install-inverter-rv",
+  },
+  {
+    title: "The Future of Power Inverters: Trends and Innovations",
+    date: "December 25, 2023",
+    excerpt:
+      "Discover the latest trends and innovations shaping the future of power inverters and the energy industry...",
+    image:
+    "/images/blogs/blog-6.gif",
+    link: "/blog/future-trends-inverters",
   },
 ];
-
-const BlogCard = ({ blog }) => (
-  <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-md mx-2 mb-6">
-    <img
-      src={blog.image}
-      alt={blog.title}
-      className="w-full h-48 rounded-lg mb-4 object-cover"
-    />
-    <h3 className="text-xl font-bold mb-2">{blog.title}</h3>
-    <p className="text-sm text-gray-500 mb-4">{blog.date}</p>
-    <p className="mb-4">{blog.excerpt}</p>
-    <a href={blog.link} className="text-blue-500 hover:underline">
-      See More
-    </a>
-  </div>
-);
 
 const BlogSection = () => {
   return (
@@ -54,7 +67,7 @@ const BlogSection = () => {
         Stay updated with the latest news and articles
       </p>
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {blogs.map((blog, index) => (
+        {blogs.slice(0, 3).map((blog, index) => (
           <BlogCard key={index} blog={blog} />
         ))}
       </div>
