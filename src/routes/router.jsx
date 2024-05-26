@@ -6,6 +6,11 @@ import AboutUs from "../pages/AboutUs";
 import ContactUs from "../pages/ContactUs";
 import LoginPage from "../pages/Login";
 import RegistrationPage from "../pages/Registration";
+import DashboardLayout from "../layouts/DashboardLayout";
+
+import PrivateRoute from "./private/PrivateRoute";
+import Dashboard from "../pages/Dashboard/Dashboard";
+import AllProducts from "../pages/Dashboard/AllProducts";
 
 export const router = createBrowserRouter([
   {
@@ -35,20 +40,28 @@ export const router = createBrowserRouter([
       },
     ],
   },
-  // {
-  //   path: "dashboard",
-  //   element: <DashboardLayout />,
-  //   errorElement: <ErrorPage />,
-  //   children: [
-  //     {
-  //       path: "",
-  //       element: (
-  //         <PrivateRoute>
-  //           <Dashboard />
-  //         </PrivateRoute>
-  //       ),
-  //     },
-
-  //   ],
-  // },
+  {
+    path: "dashboard",
+    element: <DashboardLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "",
+        element: (
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "all-products",
+        element: (
+          <PrivateRoute>
+            <AllProducts />
+          </PrivateRoute>
+        ),
+        loader: () => fetch("http://localhost:3000/products"),
+      },
+    ],
+  },
 ]);

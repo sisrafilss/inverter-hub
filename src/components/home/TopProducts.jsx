@@ -1,59 +1,16 @@
+import { useEffect, useState } from "react";
 import ProductCard from "../ProductCard";
-
-const products = [
-  {
-    id: 1,
-    title: "1000W Solar Inverter",
-    price: "$199",
-    description: "High-efficiency 1000W solar inverter for residential use.",
-    image: "/images/products/inverter-img-1.jpg",
-    brand: "Luminous",
-  },
-  {
-    id: 2,
-    title: "2000W Pure Sine Wave Inverter",
-    price: "$299",
-    description:
-      "Reliable 2000W pure sine wave inverter for all your power needs.",
-    image: "/images/products/inverter-img-2.jpg",
-    brand: "Exide",
-  },
-  {
-    id: 3,
-    title: "500W Portable Power Inverter",
-    price: "$149",
-    description: "Compact 500W power inverter, perfect for on-the-go use.",
-    image: "/images/products/inverter-img-3.jpg",
-    brand: "Microtek",
-  },
-  {
-    id: 4,
-    title: "3000W Heavy Duty Inverter",
-    price: "$399",
-    description:
-      "Durable 3000W inverter for industrial and heavy-duty applications.",
-    image: "/images/products/inverter-img-4.jpg",
-    brand: "Sukam",
-  },
-  {
-    id: 5,
-    title: "1500W Digital Inverter",
-    price: "$249",
-    description: "Advanced 1500W digital inverter with smart technology.",
-    image: "/images/products/inverter-img-5.jpg",
-    brand: "APC",
-  },
-  {
-    id: 6,
-    title: "800W Modified Sine Wave Inverter",
-    price: "$179",
-    description: "Affordable 800W modified sine wave inverter for basic needs.",
-    image: "/images/products/inverter-img-6.jpg",
-    brand: "Luminous",
-  },
-];
+import axios from "axios";
 
 const TopProducts = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/products")
+      .then((res) => setProducts(res.data));
+  }, []);
+
   return (
     <div className="my-16">
       <div className="text-center mb-10">
