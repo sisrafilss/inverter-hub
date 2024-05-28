@@ -7,7 +7,7 @@ const BlogSection = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/blogs").then((res) => setBlogs(res.data));
+    axios.get("http://localhost:3000/blogs").then((res) => setBlogs(res.data));
   }, []);
 
   return (

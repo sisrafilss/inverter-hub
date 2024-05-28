@@ -24,7 +24,7 @@ function EditProduct() {
     );
     if (userConfirmed) {
       axios
-        .patch(`http://localhost:3001/products/${product.id}`, data)
+        .patch(`http://localhost:3000/products/${product.id}`, data)
         .then(function () {
           setShowToast(true);
         })

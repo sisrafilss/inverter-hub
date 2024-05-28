@@ -14,7 +14,7 @@ const ProductCardDashboard = ({ product, onDelete }) => {
     );
     if (userConfirmed) {
       axios
-        .delete(`http://localhost:3001/products/${product?.id}`)
+        .delete(`http://localhost:3000/products/${product?.id}`)
         .then((res) => {
           setShowToast(true);
         });

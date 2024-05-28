@@ -20,7 +20,7 @@ function AddProduct() {
 
     if (userConfirmed) {
       axios
-        .post("http://localhost:3001/products", data)
+        .post("http://localhost:3000/products", data)
         .then(function (response) {
           console.log(response);
           setShowToast(true);

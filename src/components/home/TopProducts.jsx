@@ -7,7 +7,7 @@ const TopProducts = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/products")
+      .get("http://localhost:3000/products")
       .then((res) => setProducts(res.data));
   }, []);
 
