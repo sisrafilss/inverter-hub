@@ -47,6 +47,22 @@
       "description": "Affordable 800W modified sine wave inverter for basic needs.",
       "image": "/images/products/inverter-img-6.jpg",
       "brand": "Luminous"
+    },
+    {
+      "id": "8c02",
+      "title": "ttttttttttt",
+      "price": "22",
+      "brand": "asdf",
+      "description": "asd",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3SNvZVoaWWcxDLKGuouHLY7WBY1V3bLt9lZbcuFtGSw&s"
+    },
+    {
+      "id": "1cdf",
+      "title": "dsaf",
+      "price": "424",
+      "brand": "asd",
+      "description": "sdf",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3SNvZVoaWWcxDLKGuouHLY7WBY1V3bLt9lZbcuFtGSw&s"
     }
   ],
   "blogs": [

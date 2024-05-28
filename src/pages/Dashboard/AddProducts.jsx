@@ -14,17 +14,23 @@ function AddProduct() {
   } = useForm();
 
   const onSubmit = (data) => {
-    axios
-      .post("http://localhost:3001/products", data)
-      .then(function (response) {
-        console.log(response);
-        setShowToast(true);
-        setAddedProduct(response.data);
-        reset();
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    const userConfirmed = window.confirm(
+      `Are you sure you want to add this product: "${data.title}"?`
+    );
+
+    if (userConfirmed) {
+      axios
+        .post("http://localhost:3001/products", data)
+        .then(function (response) {
+          console.log(response);
+          setShowToast(true);
+          setAddedProduct(response.data);
+          reset();
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
   };
 
   return (

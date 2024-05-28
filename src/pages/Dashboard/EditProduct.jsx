@@ -18,15 +18,20 @@ function EditProduct() {
 
   const onSubmit = (data) => {
     console.log(data);
-    axios
-      .patch(`http://localhost:3001/products/${product.id}`, data)
-      .then(function () {
-        setShowToast(true);
-        
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+
+    const userConfirmed = window.confirm(
+      `Are you sure you want to update this product data: "${data.title}"?`
+    );
+    if (userConfirmed) {
+      axios
+        .patch(`http://localhost:3001/products/${product.id}`, data)
+        .then(function () {
+          setShowToast(true);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
   };
 
   return (
