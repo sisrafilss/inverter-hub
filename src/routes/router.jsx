@@ -77,7 +77,6 @@ export const router = createBrowserRouter([
             <AddProduct />
           </PrivateRoute>
         ),
-        // loader: () => fetch("http://localhost:3001/products"),
       },
       {
         path: "all-products/edit/:id",
