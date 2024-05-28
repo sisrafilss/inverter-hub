@@ -1,25 +1,65 @@
-import { Link, Outlet } from "react-router-dom";
+import { useState } from 'react';
+import { Link, Outlet } from 'react-router-dom';
+import { FaTachometerAlt, FaBoxOpen, FaPlusCircle, FaHome, FaBars } from 'react-icons/fa';
 
 const DashboardLayout = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
-    <div className="grid grid-cols-12">
-      <div className="col-span-2 bg-gray-300 min-h-screen p-12">
-        <ul>
-          <li className="border border-black p-4 text w-full">
-            <Link to={"home"}>Dashboard</Link>
+    <div className="flex">
+      <div className="fixed top-0 left-0 h-full bg-gray-800 text-white p-6 w-64 hidden lg:block">
+        <ul className="space-y-4">
+          <li className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700">
+            <FaTachometerAlt />
+            <Link to="/dashboard" className="text-white">Dashboard</Link>
           </li>
-          <li className="border border-black p-4 text w-full">
-            <Link to={"all-products"}>All Products</Link>
+          <li className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700">
+            <FaBoxOpen />
+            <Link to="all-products" className="text-white">All Products</Link>
           </li>
-          <li className="border border-black p-4 text w-full">
-            <Link to={"add-products"}>Add Product</Link>
+          <li className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700">
+            <FaPlusCircle />
+            <Link to="add-products" className="text-white">Add Product</Link>
           </li>
-          <li className="border border-black p-4 text w-full">
-            <Link to={"/"}>Home</Link>
+          <li className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700">
+            <FaHome />
+            <Link to="/" className="text-white">Home</Link>
           </li>
         </ul>
       </div>
-      <div className="col-span-10 p-20">
+
+      <div className={`fixed top-0 left-0 h-full bg-gray-800 text-white p-6 w-64 lg:hidden ${isSidebarOpen ? 'block' : 'hidden'}`}>
+        <ul className="space-y-4">
+          <li className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700">
+            <FaTachometerAlt />
+            <Link to="/dashboard" className="text-white">Dashboard</Link>
+          </li>
+          <li className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700">
+            <FaBoxOpen />
+            <Link to="all-products" className="text-white">All Products</Link>
+          </li>
+          <li className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700">
+            <FaPlusCircle />
+            <Link to="add-products" className="text-white">Add Product</Link>
+          </li>
+          <li className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700">
+            <FaHome />
+            <Link to="/" className="text-white">Home</Link>
+          </li>
+        </ul>
+      </div>
+
+      <div className="lg:hidden flex items-center p-4">
+        <button onClick={toggleSidebar} className="text-gray-800 focus:outline-none">
+          <FaBars className="text-2xl" />
+        </button>
+      </div>
+
+      <div className="ml-0 lg:ml-64 p-8 w-full bg-gray-100 min-h-screen">
         <Outlet />
       </div>
     </div>

@@ -18,7 +18,7 @@ const Dashboard = () => {
             </h1>
             <p className="text-lg font-bold text-gray-900">{user?.email}</p>
             <p className="text-gray-600">
-              Role: <span className="font-bold "> Admin</span>
+              Role: <span className="font-bold "> Admin (placeholder)</span>
             </p>
           </div>
         </div>
@@ -33,7 +33,7 @@ const Dashboard = () => {
             <p className="text-sm font-medium text-gray-700">
               Other Information:
             </p>
-            {/* <p className="text-lg font-bold text-gray-900">{user?.email}</p> */}
+            <p className="text-lg font-bold text-gray-900">Nothing to Show!</p>
           </div>
           <button
             onClick={logOut}
