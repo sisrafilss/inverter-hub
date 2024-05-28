@@ -42,9 +42,12 @@ const ProductCardDashboard = ({ product, onDelete }) => {
           >
             Details
           </Link>
-          <button className="btn btn-success text-white btn-sm rounded">
+          <Link
+            to={`edit/${product.id}`}
+            className="btn btn-success text-white btn-sm rounded"
+          >
             Edit
-          </button>
+          </Link>
           <button
             onClick={handleDeleteProduct}
             className="btn btn-warning btn-sm rounded"
