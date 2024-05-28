@@ -32,28 +32,28 @@ const DashboardLayout = () => {
         </ul>
       </div>
 
-      <div className={`fixed top-0 left-0 h-full bg-gray-800 text-white p-6 w-64 lg:hidden ${isSidebarOpen ? 'block' : 'hidden'}`}>
+      <div className={`z-50 fixed top-0 left-0 h-full bg-gray-800 text-white p-6 w-64 lg:hidden ${isSidebarOpen ? 'block' : 'hidden'}`}>
         <ul className="space-y-4">
-          <li className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700">
+          <li onClick={toggleSidebar} className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700">
             <FaTachometerAlt />
             <Link to="/dashboard" className="text-white">Dashboard</Link>
           </li>
-          <li className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700">
+          <li onClick={toggleSidebar} className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700">
             <FaBoxOpen />
             <Link to="all-products" className="text-white">All Products</Link>
           </li>
-          <li className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700">
+          <li onClick={toggleSidebar} className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700">
             <FaPlusCircle />
             <Link to="add-products" className="text-white">Add Product</Link>
           </li>
-          <li className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700">
+          <li onClick={toggleSidebar} className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700">
             <FaHome />
             <Link to="/" className="text-white">Home</Link>
           </li>
         </ul>
       </div>
 
-      <div className="lg:hidden flex items-center p-4">
+      <div className="lg:hidden flex items-start p-4">
         <button onClick={toggleSidebar} className="text-gray-800 focus:outline-none">
           <FaBars className="text-2xl" />
         </button>

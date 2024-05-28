@@ -40,12 +40,23 @@ const Navbar = () => {
             <li>
               <Link to="/dashboard">Dashboard</Link>
             </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/register">Register</Link>
-            </li>
+
+            {user ? (
+              <li>
+                <button onClick={logOut} className="btn btn-secondary btn-sm">
+                  Logout
+                </button>
+              </li>
+            ) : (
+              <>
+                <li>
+                  <Link to="/login">Login</Link>
+                </li>
+                <li>
+                  <Link to="/register">Register</Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
         <Link className="btn btn-ghost text-xl" to="/">
