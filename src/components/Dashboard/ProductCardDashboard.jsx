@@ -9,11 +9,16 @@ const ProductCardDashboard = ({ product, onDelete }) => {
   const [showToast, setShowToast] = useState(false);
 
   const handleDeleteProduct = () => {
-    axios
-      .delete(`http://localhost:3001/products/${product?.id}`)
-      .then((res) => {
-        setShowToast(true);
-      });
+    const userConfirmed = window.confirm(
+      `Are you sure you want to delete "${product.title}"?`
+    );
+    if (userConfirmed) {
+      axios
+        .delete(`http://localhost:3001/products/${product?.id}`)
+        .then((res) => {
+          setShowToast(true);
+        });
+    }
   };
 
   return (

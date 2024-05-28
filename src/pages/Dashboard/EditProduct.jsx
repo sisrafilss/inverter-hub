@@ -22,6 +22,7 @@ function EditProduct() {
       .patch(`http://localhost:3001/products/${product.id}`, data)
       .then(function () {
         setShowToast(true);
+        
       })
       .catch(function (error) {
         console.log(error);
