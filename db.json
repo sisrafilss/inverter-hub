@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "title": "1000W Solar Inverter",
       "price": 199,
       "description": "High-efficiency 1000W solar inverter for residential use.",
@@ -9,7 +9,7 @@
       "brand": "Luminous"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "2000W Pure Sine Wave Inverter",
       "price": 99,
       "description": "Reliable 2000W pure sine wave inverter for all your power needs.",
@@ -17,7 +17,7 @@
       "brand": "Exide"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "500W Portable Power Inverter",
       "price": 149,
       "description": "Compact 500W power inverter, perfect for on-the-go use.",
@@ -25,7 +25,7 @@
       "brand": "Microtek"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "3000W Heavy Duty Inverter",
       "price": 399,
       "description": "Durable 3000W inverter for industrial and heavy-duty applications.",
@@ -33,7 +33,7 @@
       "brand": "Sukam"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "1500W Digital Inverter",
       "price": 249,
       "description": "Advanced 1500W digital inverter with smart technology.",
@@ -41,17 +41,25 @@
       "brand": "APC"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "800W Modified Sine Wave Inverter",
       "price": 179,
       "description": "Affordable 800W modified sine wave inverter for basic needs.",
       "image": "/images/products/inverter-img-6.jpg",
       "brand": "Luminous"
+    },
+    {
+      "id": "e005",
+      "title": "asd",
+      "price": "43",
+      "brand": "adfa ds",
+      "description": "daf",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3SNvZVoaWWcxDLKGuouHLY7WBY1V3bLt9lZbcuFtGSw&s"
     }
   ],
   "blogs": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Choosing the Right Power Inverter for Your Home",
       "date": "May 5, 2024",
       "excerpt": "Learn how to select the best power inverter for your home based on your specific power needs and preferences...",
@@ -59,7 +67,7 @@
       "link": "/blog/choosing-right-inverter"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Benefits of Using Solar Power Inverters",
       "date": "April 20, 2024",
       "excerpt": "Explore the numerous advantages of integrating solar power inverters into your energy system for a sustainable future...",
@@ -67,7 +75,7 @@
       "link": "/blog/benefits-solar-inverters"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Top Features to Look for in a Power Inverter",
       "date": "March 30, 2024",
       "excerpt": "Understand the key features to consider when purchasing a power inverter to ensure maximum efficiency and reliability...",
@@ -75,7 +83,7 @@
       "link": "/blog/features-power-inverters"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Maintenance Tips for Your Power Inverter",
       "date": "February 15, 2024",
       "excerpt": "Keep your power inverter in top condition with these essential maintenance tips and practices...",
@@ -83,7 +91,7 @@
       "link": "/blog/maintenance-tips"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "How to Install a Power Inverter in Your RV",
       "date": "January 10, 2024",
       "excerpt": "Step-by-step guide to installing a power inverter in your RV for a seamless travel experience...",
@@ -91,7 +99,7 @@
       "link": "/blog/install-inverter-rv"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "The Future of Power Inverters: Trends and Innovations",
       "date": "December 25, 2023",
       "excerpt": "Discover the latest trends and innovations shaping the future of power inverters and the energy industry...",
